@@ -1,5 +1,9 @@
 # 更新记录
 
+## 0.1.3 — 2026-11-03
+
+- `auth.usage` 对「额度为 0」做中文优雅降级：千问办公服务端对零额度账号返回英文 `the account reports no credits`，现统一显示为「剩余 0 积分（每日登录送积分活动已于 2026-08-09 结束）」，不再抛英文硬错误。
+
 ## 0.1.2 — 2026-11-03
 
 - 重写「签到」为 loomy 同款机制：Magpie 会从 `auth.checkin` 自动派生 `<provider>_checkin` 工具（与 loomy 的 `loomy_checkin` 同一套逻辑），按钮/工具可点且返回结构化 `{outcome, message}`。
