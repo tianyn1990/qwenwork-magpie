@@ -1,5 +1,12 @@
 # 更新记录
 
+## 0.1.1 — 2026-11-03
+
+- 修复 Magpie 供应商卡片「没有用量」：在 `config.provider[qwenwork-community]` 增加 `usage: true` 标志，使界面渲染用量面板（调用已有的 `auth.usage`）。
+- 修复 Magpie 供应商卡片「没有模型」：把内部 `MODELS` 转成 Magpie 模型 schema（`id/name/npm/url/apiId/context/input/output/reasoning/image/tool_call` 等），界面正常显示「千问办公·基础 / 高级」两档位。
+- 新增「签到」：`auth.checkin` 复用 `getAccount` + `quotaForMagpie` 重新拉取账号上下文刷新积分余额，等价于千问办公「每日登录送 100 积分」。供应商卡片同步增加 `checkin: true` 标志以显示签到按钮。
+- 独立 ID 保持 `qwenwork-community`，不接管官方 `qwenwork` 供应商。
+
 ## 0.1.0 — 2026-10-22
 
 - 首个正式发布版本，包含 beta.2 的流式结束标记修复。
