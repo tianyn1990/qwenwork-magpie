@@ -1,5 +1,11 @@
 # 更新记录
 
+## 0.1.2 — 2026-11-03
+
+- 重写「签到」为 loomy 同款机制：Magpie 会从 `auth.checkin` 自动派生 `<provider>_checkin` 工具（与 loomy 的 `loomy_checkin` 同一套逻辑），按钮/工具可点且返回结构化 `{outcome, message}`。
+- 诚实修正：千问办公官方「每日登录送积分」活动已于 2026-08-09 结束，当前无每日发放、也无独立签到领取接口；`checkin` 现重读账号上下文并回读积分余额，提示活动已结束、显示当前余额。
+- 保留供应商卡片 `checkin: true` 标志以渲染签到入口。
+
 ## 0.1.1 — 2026-11-03
 
 - 修复 Magpie 供应商卡片「没有用量」：在 `config.provider[qwenwork-community]` 增加 `usage: true` 标志，使界面渲染用量面板（调用已有的 `auth.usage`）。
